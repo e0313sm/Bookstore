@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookstore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #8b1c1c;
+    }
+
+    .hero {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero .price {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero .price del {
+      color: #999;
+      margin-right: 10px;
+    }
+
+    .book-img {
+      max-width: 300px;
+    }
+
+    .btn-buy {
+      background-color: #8b1c1c;
+      color: #fff;
+    }
+
+    .btn-buy:hover {
+      background-color: #a02121;
+    }
+
+    .section-books {
+      padding: 40px 20px;
+    }
+
+    .book-gallery {
+      padding: 40px 0;
+    }
+
+    .book-img {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-height: 400px;
+      object-fit: contain;
+    }
+
+    .book-img:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .book-filter-btns {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">BOOKSTORE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Libros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container d-flex flex-column flex-md-row align-items-center">
+      <!-- Texto del libro -->
+      <div class="hero-text me-md-5 text-center text-md-start">
+        <h1>Cien años de soledad</h1>
+        <p class="lead">By Gabriel García Márquez</p>
+        <p class="price">
+          <del>$29.99</del> <span class="text-danger fw-bold">$19.99</span>
+        </p>
+        <a href="#" class="btn btn-buy">BUY THIS BOOK</a>
+      </div>
+
+      <!-- Imagen del libro -->
+      <div class="hero-img mt-4 mt-md-0 text-center">
+        <img src="../IMG/cienAñosDeSoledad.jpeg" alt="Portada de Cien años de soledad" class="book-img img-fluid"
+          style="max-height: 400px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-left: 200px;">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Book List -->
+  <section class="section-books">
+    <div class="container">
+      <h3 class="mb-4">Libros</h3>
+      <p>Los libros más recientes que llegaron a nuestra librería.</p>
+      <div class="d-flex gap-3 mb-3">
+        <button class="btn btn-outline-secondary btn-sm">MEJOR VENDIDO</button>
+        <button class="btn btn-outline-secondary btn-sm">ÚLTIMO</button>
+        <button class="btn btn-outline-secondary btn-sm">VENTA</button>
+      </div>
+      <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+
+          <!-- Libro 1 -->
+          <div class="col book-card">
+            <img src="../IMG/elRinconDeLosJustos.jpeg" alt="El Rincón de los Justos"
+              class="img-fluid book-img"
+              onclick="showBookDetails('El Rincón de los Justos', 'Jorge Velasco Mackenzie', '$12.99', 'Una profunda historia ambientada en el Ecuador del siglo XX.')">
+            <div class="book-title">El Rincón de los Justos</div>
+            <div class="book-price">$12.99</div>
+            <button class="btn btn-sm btn-outline-primary mt-2">Comprar</button>
+          </div>
+
+          <!-- Libro 2 -->
+          <div class="col book-card">
+            <img src="../IMG/habitosAtomicos.jpeg" alt="Hábitos Atómicos"
+              class="img-fluid book-img"
+              onclick="showBookDetails('Hábitos Atómicos', 'James Clear', '$18.99', 'Un método comprobado para formar hábitos saludables y romper los malos.')">
+            <div class="book-title">Hábitos Atómicos</div>
+            <div class="book-price">$18.99</div>
+            <button class="btn btn-sm btn-outline-primary mt-2">Comprar</button>
+          </div>
+
+          <!-- Libro 3 -->
+          <div class="col book-card">
+            <img src="../IMG/laFelicidad.jpeg" alt="La Felicidad"
+              class="img-fluid book-img"
+              onclick="showBookDetails('La Felicidad', 'Gabriel Rolón', '$15.00', 'Explora el significado de la felicidad más allá de las ilusiones.')">
+            <div class="book-title">La Felicidad</div>
+            <div class="book-price">$15.00</div>
+            <button class="btn btn-sm btn-outline-primary mt-2">Comprar</button>
+          </div>
+
+          <!-- Libro 4 -->
+          <div class="col book-card">
+            <img src="../IMG/loQueNuncaCambia.jpeg" alt="Lo que nunca cambia" class="img-fluid book-img"
+              onclick="showBookDetails('Lo que nunca cambia', 'Morgan Housel', '$14.50', 'Una guía sobre las verdades financieras que perduran en un mundo cambiante.')">
+            <div class="book-title">Lo que nunca cambia</div>
+            <div class="book-price">$14.50</div>
+            <button class="btn btn-sm btn-outline-primary mt-2">Comprar</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Modal de información del libro -->
+      <div class="modal fade" id="bookModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bookModalTitle">Título del libro</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong>Autor:</strong> <span id="bookModalAuthor"></span></p>
+              <p><strong>Precio:</strong> <span id="bookModalPrice"></span></p>
+              <p id="bookModalDescription"></p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary">Comprar ahora</button>
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        function showBookDetails(title, author, price, description) {
+          document.getElementById('bookModalTitle').innerText = title;
+          document.getElementById('bookModalAuthor').innerText = author;
+          document.getElementById('bookModalPrice').innerText = price;
+          document.getElementById('bookModalDescription').innerText = description;
+
+          const bookModal = new bootstrap.Modal(document.getElementById('bookModal'));
+          bookModal.show();
+        }
+      </script>
+
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <div class="container">
+      <div class="row">
+
+        <!-- About -->
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3">BOOKSTORE</h5>
+          <p>Tu librería confiable desde 1960. Explora una amplia variedad de títulos seleccionados para inspirar,
+            educar y entretener.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3">Enlaces Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Inicio</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Libros</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Eventos</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter / Contact -->
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3">Suscríbete</h5>
+          <p>Recibe las últimas novedades, ofertas y recomendaciones directamente en tu correo.</p>
+          <form>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Tu correo electrónico">
+            </div>
+            <button class="btn btn-outline-light btn-sm">Suscribirme</button>
+          </form>
+        </div>
+
+      </div>
+      <hr class="border-light" />
+      <div class="text-center small">
+        &copy; 2025 Bookstore. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
