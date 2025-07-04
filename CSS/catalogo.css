@@ -13,7 +13,7 @@
 }
 
 
-  .btn-vinotinto {
+  .btn-sm {
     display: inline-block;
     background-color: #8b1c1c;
     color: white;
@@ -27,7 +27,7 @@
     text-align: center;
   }
 
-  .btn-vinotinto:hover {
+  .btn-sm:hover {
     background-color: #fff;
     color: #8b1c1cbb;
     border-color: #8b1c1cbb;
@@ -64,3 +64,12 @@
 #cartSidebar.open {
     right: 0;
 }
+
+#cartList {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 60vh; /* evita que crezca más allá de cierto punto */
+  padding-right: 4px; /* evita que el scrollbar tape el contenido */
+}
+
+

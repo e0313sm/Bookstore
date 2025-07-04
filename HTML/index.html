@@ -25,10 +25,24 @@
           <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
           <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li>
+            <!-- 🛒 Botón carrito -->
+            <button class="btn ms-3" onclick="toggleCart()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+              </svg> (<span id="cartCount" style="display: inline-block; width: 20px; text-align: center;">0</span>)
+            </button>
+
+          </li>
+
         </ul>
       </div>
     </div>
   </nav>
+
+  
 
   <section class="hero">
     <div class="container d-flex flex-column flex-md-row align-items-center">
@@ -70,7 +84,8 @@
               onclick="showBookDetails('El Rincón de los Justos', 'Jorge Velasco Mackenzie', '$12.99', 'Una profunda historia ambientada en el Ecuador del siglo XX.')">
             <div class="book-title">El Rincón de los Justos</div>
             <div class="book-price">$12.99</div>
-            <button class="btn btn-sm btn-vinotinto mt-2">Comprar</button>
+            <button class="btn btn-sm btn-outline-primary mt-2"
+              onclick="addToCart('La Felicidad', 15.00)">Comprar</button>
           </div>
 
           <!-- Libro 2 -->
@@ -79,7 +94,8 @@
               onclick="showBookDetails('Hábitos Atómicos', 'James Clear', '$18.99', 'Un método comprobado para formar hábitos saludables y romper los malos.')">
             <div class="book-title">Hábitos Atómicos</div>
             <div class="book-price">$18.99</div>
-            <button class="btn btn-sm btn-vinotinto mt-2">Comprar</button>
+            <button class="btn btn-sm btn-outline-primary mt-2"
+              onclick="addToCart('La Felicidad', 15.00)">Comprar</button>
           </div>
 
           <!-- Libro 3 -->
@@ -88,7 +104,8 @@
               onclick="showBookDetails('La Felicidad', 'Gabriel Rolón', '$15.00', 'Explora el significado de la felicidad más allá de las ilusiones.')">
             <div class="book-title">La Felicidad</div>
             <div class="book-price">$15.00</div>
-            <button class="btn btn-sm btn-vinotinto mt-2">Comprar</button>
+            <button class="btn btn-sm btn-outline-primary mt-2"
+              onclick="addToCart('La Felicidad', 15.00)">Comprar</button>
           </div>
 
           <!-- Libro 4 -->
@@ -97,7 +114,8 @@
               onclick="showBookDetails('Lo que nunca cambia', 'Morgan Housel', '$14.50', 'Una guía sobre las verdades financieras que perduran en un mundo cambiante.')">
             <div class="book-title">Lo que nunca cambia</div>
             <div class="book-price">$14.50</div>
-            <button class="btn btn-sm btn-vinotinto mt-2">Comprar</button>
+            <button class="btn btn-sm btn-outline-primary mt-2"
+              onclick="addToCart('La Felicidad', 15.00)">Comprar</button>
           </div>
 
         </div>
