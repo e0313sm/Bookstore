@@ -70,3 +70,24 @@
     text-align: center;
     margin-bottom: 30px;
 }
+
+
+  .btn-sm {
+    display: inline-block;
+    background-color: #8b1c1c;
+    color: white;
+    border: 2px solid #8b1c1c;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+  }
+
+  .btn-sm:hover {
+    background-color: #fff;
+    color: #8b1c1cbb;
+    border-color: #8b1c1cbb;
+  }
