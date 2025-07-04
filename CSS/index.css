@@ -1,0 +1,72 @@
+.hero {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero .price {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero .price del {
+    color: #999;
+    margin-right: 10px;
+}
+
+.book-img {
+    max-width: 300px;
+}
+
+.btn-buy {
+    background-color: #8b1c1c;
+    color: #fff;
+}
+
+.btn-buy:hover {
+    background-color: #a02121;
+}
+
+.section-books {
+    padding: 40px 20px;
+}
+
+.book-gallery {
+    padding: 40px 0;
+}
+
+.book-img {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-height: 400px;
+    object-fit: contain;
+}
+.book-card {
+    text-align: center;
+}
+
+.book-title {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.book-price {
+    color: #b12704;
+    font-weight: bold;
+}
+
+.book-img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book-filter-btns {
+    text-align: center;
+    margin-bottom: 30px;
+}

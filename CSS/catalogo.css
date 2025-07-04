@@ -1,0 +1,66 @@
+.book-img {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 300px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.book-img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+  .btn-vinotinto {
+    display: inline-block;
+    background-color: #8b1c1c;
+    color: white;
+    border: 2px solid #8b1c1c;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+  }
+
+  .btn-vinotinto:hover {
+    background-color: #fff;
+    color: #8b1c1cbb;
+    border-color: #8b1c1cbb;
+  }
+
+
+.book-card {
+    text-align: center;
+}
+
+.book-title {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.book-price {
+    color: #8b1c1c;
+    font-weight: bold;
+}
+
+#cartSidebar {
+    width: 350px;
+    position: fixed;
+    right: -350px;
+    top: 0;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+    padding: 20px;
+    transition: right 0.3s ease;
+}
+
+#cartSidebar.open {
+    right: 0;
+}
