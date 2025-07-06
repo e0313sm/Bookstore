@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eventos | Bookstore</title>
+  <!-- Bootstrap CSS y Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../CSS/eventos.css">
+</head>
+<body>
+  <!-- HEADER: tu header original (sin modificar) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">BOOKSTORE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Libros</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li>
+            <button class="btn ms-3" onclick="toggleCart()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+              </svg> (<span id="cartCount" style="display: inline-block; width: 20px; text-align: center;">0</span>)
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrousel de eventos destacados -->
+  <section class="event-carousel-section">
+    <div class="container py-4">
+      <div class="rounded-4 shadow-lg overflow-hidden border border-3 border-dark" style="background:#222;">
+        <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4500">
+              <div class="d-flex flex-column flex-md-row align-items-stretch">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" class="carousel-img" alt="Feria del Libro Medellín">
+                <div class="carousel-caption-custom d-flex flex-column justify-content-center align-items-start">
+                  <h2 class="fw-bold mb-2">Feria del Libro Medellín 2025</h2>
+                  <p>El evento literario más grande de la ciudad. Autores, talleres, firmas y cultura.</p>
+                  <button class="btn btn-dark px-4 py-2 mt-2">Comprar</button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4500">
+              <div class="d-flex flex-column flex-md-row align-items-stretch">
+                <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=900&q=80" class="carousel-img" alt="Lectura al Parque Provenza">
+                <div class="carousel-caption-custom d-flex flex-column justify-content-center align-items-start">
+                  <h2 class="fw-bold mb-2">Lectura al Parque en Provenza</h2>
+                  <p>Lectura al aire libre, picnic, música y actividades para toda la familia.</p>
+                  <button class="btn btn-dark px-4 py-2 mt-2">Comprar</button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4500">
+              <div class="d-flex flex-column flex-md-row align-items-stretch">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=900&q=80" class="carousel-img" alt="Noche de Poesía">
+                <div class="carousel-caption-custom d-flex flex-column justify-content-center align-items-start">
+                  <h2 class="fw-bold mb-2">Noche de Poesía y Café</h2>
+                  <p>Una noche mágica con poesía, café especial y arte local en Provenza.</p>
+                  <button class="btn btn-dark px-4 py-2 mt-2">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buscador de eventos -->
+  <section class="event-search-bar py-3">
+    <div class="container">
+      <form id="event-search-form" autocomplete="off">
+        <div class="row g-2 align-items-center">
+          <div class="col-12 col-md-4">
+            <input type="text" id="searchText" class="form-control form-control-lg" placeholder="Buscar por evento, artista o lugar">
+          </div>
+          <div class="col-6 col-md-2">
+            <select id="searchCity" class="form-select form-select-lg">
+              <option value="">Cualquier ciudad</option>
+              <option>Medellín</option>
+              <option>Bogotá</option>
+              <option>Cali</option>
+              <option>Envigado</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-2">
+            <input type="date" id="searchDate" class="form-control form-control-lg">
+          </div>
+          <div class="col-6 col-md-2">
+            <select id="searchCategory" class="form-select form-select-lg">
+              <option value="">Cualquier categoría</option>
+              <option value="Feria del Libro">Feria del Libro</option>
+              <option value="Poesía">Poesía</option>
+              <option value="Infantil">Infantil</option>
+              <option value="Música">Música</option>
+              <option value="Cómic">Cómic</option>
+              <option value="Taller">Taller</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-2 d-grid">
+            <button type="submit" class="btn btn-success btn-lg w-100">BUSCAR</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Cartas de eventos -->
+<div class="row g-4" id="event-cards">
+  <div class="col-12 col-md-6 col-lg-3 event-card-col">
+    <div class="event-card h-100 shadow-sm">
+      <img src="https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&w=400" alt="Feria del Libro de Medellín" class="event-card-img-small">
+      <span class="ribbon">HOY</span>
+      <div class="event-card-body">
+        <div class="event-card-title">Feria del Libro de Medellín</div>
+        <div class="event-card-date"><i class="bi bi-calendar-event"></i> 2025-08-10</div>
+        <div class="event-card-location"><i class="bi bi-geo-alt"></i> Medellín</div>
+        <div class="event-card-category d-none">Feria del Libro</div>
+        <div class="event-card-desc">El evento literario más grande de la ciudad. Charlas, talleres, firmas y cultura.</div>
+        <button class="event-card-btn mt-2">Ver más</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3 event-card-col">
+    <div class="event-card h-100 shadow-sm">
+      <img src="https://images.pexels.com/photos/167446/pexels-photo-167446.jpeg?auto=compress&w=400" alt="Festival de Jazz Bogotá" class="event-card-img-small">
+      <div class="event-card-body">
+        <div class="event-card-title">Festival de Jazz Bogotá</div>
+        <div class="event-card-date"><i class="bi bi-calendar-event"></i> 2025-08-19</div>
+        <div class="event-card-location"><i class="bi bi-geo-alt"></i> Bogotá</div>
+        <div class="event-card-category d-none">Música</div>
+        <div class="event-card-desc">Conciertos, jam sessions y talleres en el festival de jazz más importante del país.</div>
+        <button class="event-card-btn mt-2">Ver más</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3 event-card-col">
+    <div class="event-card h-100 shadow-sm">
+      <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&w=400" alt="Tarde de Títeres Infantil" class="event-card-img-small">
+      <div class="event-card-body">
+        <div class="event-card-title">Tarde de Títeres Infantil</div>
+        <div class="event-card-date"><i class="bi bi-calendar-event"></i> 2025-09-02</div>
+        <div class="event-card-location"><i class="bi bi-geo-alt"></i> Cali</div>
+        <div class="event-card-category d-none">Infantil</div>
+        <div class="event-card-desc">Un espectáculo de títeres para los más pequeños, lleno de música y cuentos.</div>
+        <button class="event-card-btn mt-2">Ver más</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3 event-card-col">
+    <div class="event-card h-100 shadow-sm">
+      <img src="https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&w=400" alt="Noche de Teatro Caribe" class="event-card-img-small">
+      <div class="event-card-body">
+        <div class="event-card-title">Noche de Teatro Caribe</div>
+        <div class="event-card-date"><i class="bi bi-calendar-event"></i> 2025-07-15</div>
+        <div class="event-card-location"><i class="bi bi-geo-alt"></i> Barranquilla</div>
+        <div class="event-card-category d-none">Teatro</div>
+        <div class="event-card-desc">Una noche de teatro con obras caribeñas y música en vivo.</div>
+        <button class="event-card-btn mt-2">Ver más</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="no-events" class="text-center text-muted mt-4" style="display:none">No se encontraron eventos.</div>
+  <!-- Modal de información del evento -->
+  <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h5 class="modal-title" id="eventModalLabel">Título del Evento</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="" alt="Imagen Evento" class="img-fluid rounded mb-3" id="eventModalImg">
+          <p id="eventModalDesc"></p>
+          <ul class="list-group list-group-flush mb-3" id="eventModalDetails"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer igual que tu plantilla -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3">BOOKSTORE</h5>
+          <p>Tu librería confiable desde 1960. Explora una amplia variedad de títulos seleccionados para inspirar, educar y entretener.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3">Enlaces Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Inicio</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Libros</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Eventos</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3">Suscríbete</h5>
+          <p>Recibe las últimas novedades, ofertas y recomendaciones directamente en tu correo.</p>
+          <form>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Tu correo electrónico">
+            </div>
+            <button class="btn btn-outline-light btn-sm">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+      <hr class="border-light" />
+      <div class="text-center small">
+        &copy; 2025 Bookstore. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../JS/eventos.js"></script>
+</body>
+</html>
